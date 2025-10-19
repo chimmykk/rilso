@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Views - Yeite Rilsosing Koireng</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
   <div class="container">
@@ -45,7 +46,7 @@
           <p>I'm optimistic about the potential for technology we're building.</p>
         </div>
 
-        <div class="view-section">
+        <div class="view-section" id="community-section">
           <h2>On Community & Connection</h2>
           <p>Despite working in technology, I value human connection above all. The best projects are built by teams that trust each other, and the best solutions come from understanding the people who will use them.</p>
           
@@ -73,5 +74,102 @@
       </div>
     </footer>
   </div>
+
+  <!-- Hidden YouTube player for background music -->
+  <div id="music-player" style="position: fixed; top: -1000px; left: -1000px; opacity: 0;">
+    <div id="youtube-player"></div>
+  </div>
+
+  <script>
+    let player;
+    let isPlaying = false;
+    let hasStarted = false;
+
+    // YouTube API callback
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-player', {
+        height: '1',
+        width: '1',
+        videoId: 'Ct5OszN8AHE',
+        playerVars: {
+          'autoplay': 0,
+          'controls': 0,
+          'disablekb': 1,
+          'enablejsapi': 1,
+          'fs': 0,
+          'iv_load_policy': 3,
+          'modestbranding': 1,
+          'playsinline': 1,
+          'rel': 0,
+          'showinfo': 0
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      console.log('YouTube player ready');
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        isPlaying = true;
+      } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        isPlaying = false;
+      }
+    }
+
+    // Intersection Observer to detect when section comes into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasStarted) {
+          // Section is visible, start music
+          if (player && !isPlaying) {
+            player.playVideo();
+            hasStarted = true;
+            console.log('Music started for Community & Connection section');
+          }
+        } else if (!entry.isIntersecting && hasStarted && isPlaying) {
+          // Section is not visible, pause music
+          if (player) {
+            player.pauseVideo();
+            console.log('Music paused - section not visible');
+          }
+        }
+      });
+    }, {
+      threshold: 0.3, // Trigger when 30% of the section is visible
+      rootMargin: '0px 0px -10% 0px' // Start a bit before the section is fully visible
+    });
+
+    // Start observing when the page loads
+    window.addEventListener('load', () => {
+      const communitySection = document.getElementById('community-section');
+      if (communitySection) {
+        observer.observe(communitySection);
+      }
+    });
+
+    // Optional: Add a manual play/pause button for user control
+    function toggleMusic() {
+      if (player) {
+        if (isPlaying) {
+          player.pauseVideo();
+        } else {
+          player.playVideo();
+        }
+      }
+    }
+
+    // Add keyboard shortcut (M key) to toggle music
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'm' || e.key === 'M') {
+        toggleMusic();
+      }
+    });
+  </script>
 </body>
 </html>
