@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yeite Rilsosing Koireng</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
   <div class="container">
@@ -22,11 +23,20 @@
           <li><a href="https://super-censored-again-potato-phi.vercel.app" target="_blank">UpFloor</a></li>
         </ul>
         
-     <p>I'm passionate about <strong>blockchain technology</strong>, <strong>AI model training</strong>, and building innovative solutions. When I'm not coding, I'm usually exploring crypto markets or brainstorming my next big project.</p>
+        <p>I'm into <strong>blockchain tech</strong> and <strong>AI stuff</strong>. When I'm not coding, I'm probably checking out crypto markets or thinking about what to build next.</p>
+<p> trying hard, trying to be the best version of myself</p>
 
-      <p>I’m really interested in <strong>blockchain technology</strong>, <strong>AI model training</strong>, and finding creative ways to solve problems. When I’m not coding, I enjoy exploring crypto markets or tinkering with new project ideas.</p>
-
-        <p> <strong>Imphal / Chennai 
+<li>recents events on personal notes</li>
+<p> if my recent silence and unavailability troubles you i am sorry and i appolgies you for that
+  and i understand it;s okay to be mad at me, 
+  but hey, i dont owe you anything, i did the best version of
+  what a man could do at that time.
+  <br> i have my own life, my own goals, my own dreams, and my own path.
+</p>
+<p>being judge badly by people who don't know me or my situation.
+  <br> not that i care, but that's that, :(
+</p>
+        <p><strong>Imphal / Chennai</strong></p>
       </div>
     </main>
 
@@ -45,5 +55,83 @@
       </div>
     </footer>
   </div>
+
+  <!-- Hidden YouTube player for background music -->
+  <div id="music-player" style="position: fixed; top: -1000px; left: -1000px; opacity: 0;">
+    <div id="youtube-player"></div>
+  </div>
+
+  <script>
+    let player;
+    let isPlaying = false;
+
+    // YouTube API callback
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-player', {
+        height: '1',
+        width: '1',
+        videoId: '3jL4S4X97sQ',
+        playerVars: {
+          'autoplay': 1,
+          'controls': 0,
+          'disablekb': 1,
+          'enablejsapi': 1,
+          'fs': 0,
+          'iv_load_policy': 3,
+          'modestbranding': 1,
+          'playsinline': 1,
+          'rel': 0,
+          'showinfo': 0,
+          'start': 73
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      console.log('YouTube player ready - waiting for scroll to start music');
+      // Music will start when user scrolls
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        isPlaying = true;
+        console.log('Music started on home page');
+      } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        isPlaying = false;
+      }
+    }
+
+    // Manual play/pause function
+    function toggleMusic() {
+      if (player) {
+        if (isPlaying) {
+          player.pauseVideo();
+        } else {
+          player.playVideo();
+        }
+      }
+    }
+
+    // Add keyboard shortcut (M key) to toggle music
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'm' || e.key === 'M') {
+        toggleMusic();
+      }
+    });
+
+    // Start music when user scrolls
+    let hasScrolled = false;
+    window.addEventListener('scroll', () => {
+      if (!hasScrolled && player && !isPlaying) {
+        player.playVideo();
+        hasScrolled = true;
+        console.log('Music started on scroll');
+      }
+    });
+  </script>
 </body>
 </html>
