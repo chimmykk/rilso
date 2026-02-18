@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yeite Rilsosing Koireng</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
@@ -20,9 +19,9 @@
       <div class="content">
         <p>Grew up in Imphal. small town.</p>
 
-        <p>Currently working on:</p>
+        <p> just working on random ideas for now:)</p>
+        <p> few recent projects </p>
         <ul>
-          <li><a href="https://upfloor.co" target="_blank">UpFloor</a> - a platform that buys floor NFTs from taxes</li>
           <li><a href="https://github.com/chimmykk/Bk3JS" target="_blank">Bk3JS</a> - blake3 purejs runtime with good
             performance</li>
 
@@ -61,83 +60,6 @@
     </footer>
   </div>
 
-  <!-- Hidden YouTube player for background music -->
-  <div id="music-player" style="position: fixed; top: -1000px; left: -1000px; opacity: 0;">
-    <div id="youtube-player"></div>
-  </div>
-
-  <script>
-    let player;
-    let isPlaying = false;
-
-    // YouTube API callback
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('youtube-player', {
-        height: '1',
-        width: '1',
-        videoId: 'L3wKzyIN1yk',
-        playerVars: {
-          'autoplay': 1,
-          'controls': 0,
-          'disablekb': 1,
-          'enablejsapi': 1,
-          'fs': 0,
-          'iv_load_policy': 3,
-          'modestbranding': 1,
-          'playsinline': 1,
-          'rel': 0,
-          'showinfo': 0,
-          'start': 73
-        },
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    }
-
-    function onPlayerReady(event) {
-      console.log('YouTube player ready - waiting for scroll to start music');
-      // Music will start when user scrolls
-    }
-
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        isPlaying = true;
-        console.log('Music started on home page');
-      } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-        isPlaying = false;
-      }
-    }
-
-    // Manual play/pause function
-    function toggleMusic() {
-      if (player) {
-        if (isPlaying) {
-          player.pauseVideo();
-        } else {
-          player.playVideo();
-        }
-      }
-    }
-
-    // Add keyboard shortcut (M key) to toggle music
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'm' || e.key === 'M') {
-        toggleMusic();
-      }
-    });
-
-    // Start music when user scrolls
-    let hasScrolled = false;
-    window.addEventListener('scroll', () => {
-      if (!hasScrolled && player && !isPlaying) {
-        player.playVideo();
-        hasScrolled = true;
-        console.log('Music started on scroll');
-      }
-    });
-  </script>
 </body>
 
 </html>
