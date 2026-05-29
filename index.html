@@ -1,75 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yeite Rilsosing Koireng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
 </head>
 
-<body>
-  <div class="container">
-    <header>
-      <h1>yeite rilsosing koireng</h1>
-      <p class="tagline">building stuff, sleeps 99% late then most of the world</p>
-    </header>
+<body class="page-home">
+  <div class="page">
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-nav__brand" href="index.html">yrk</a>
+      <div class="site-nav__end">
+        <ul class="site-nav__links">
+          <li><a href="index.html" class="is-active">about</a></li>
+          <li><a href="projects.html">projects</a></li>
+          <li><a href="personalviews.html">views</a></li>
+        </ul>
+        <button type="button" class="theme-toggle" aria-label="Toggle color theme">☾</button>
+      </div>
+    </nav>
 
-    <main>
+    <main class="container">
+      <header class="hero">
+        <h1>yeite rilsosing <span>koireng</span></h1>
+        <p class="tagline">building stuff, sleeps 99% late then most of the world</p>
+      </header>
+
       <div class="content">
         <p>Grew up in Imphal. small town.</p>
 
-        <p><strong>currently working on:</strong></p>
-        <ul>
-          <li>
-            <a href="https://blockpocketlabs.com/" target="_blank" rel="noopener">BLOCK-POCKET</a> —
-            a voice powered crypto companion prototype.
-            <a href="https://blockpocketlabs.com/" target="_blank" rel="noopener">website</a> ·
-            <a href="https://github.com/chimmykk/BLOCK-POCKET" target="_blank" rel="noopener">github</a> ·
-            <a href="https://asset.cloudinary.com/twdin/e7eecc0e91f1c249f476cb759fea9f5d" target="_blank" rel="noopener">build photos</a>
-          </li>
-        </ul>
+        <section class="section">
+          <p class="section-label">currently working on</p>
+          <ul class="card-list">
+            <li>
+              <article class="card card--featured">
+                <h2 class="card__title">
+                  <a href="https://blockpocketlabs.com/" target="_blank" rel="noopener">BLOCK-POCKET</a>
+                </h2>
+                <p class="card__desc">a crypto companion prototype.</p>
+                <div class="card__links">
+                  <a class="pill pill--accent" href="https://blockpocketlabs.com/" target="_blank" rel="noopener">website</a>
+                  <a class="pill" href="https://github.com/chimmykk/BLOCK-POCKET" target="_blank" rel="noopener">github</a>
+                  <a class="pill" href="https://asset.cloudinary.com/twdin/e7eecc0e91f1c249f476cb759fea9f5d" target="_blank" rel="noopener">build photos</a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </section>
 
-        <p><strong>few recent projects</strong></p>
-        <ul>
-          <li><a href="https://github.com/chimmykk/Bk3JS" target="_blank">Bk3JS</a> - blake3 purejs runtime with good
-            performance</li>
+        <section class="section">
+          <p class="section-label">few recent projects</p>
+          <ul class="card-list">
+            <li>
+              <article class="card">
+                <h2 class="card__title">
+                  <a href="https://github.com/chimmykk/Bk3JS" target="_blank" rel="noopener">Bk3JS</a>
+                </h2>
+                <p class="card__desc">blake3 purejs runtime with good performance</p>
+              </article>
+            </li>
+            <li>
+              <article class="card">
+                <h2 class="card__title">
+                  <a href="https://github.com/chimmykk/catchyxyz" target="_blank" rel="noopener">catchyxyz</a>
+                </h2>
+                <p class="card__desc">a game that lets you control rods via phone using gyroscope</p>
+              </article>
+            </li>
+          </ul>
+        </section>
 
-          <li><a href="https://github.com/chimmykk/catchyxyz" target="_blank">catchyxyz</a> - a game that lets you
-            control rods via phone using gyroscope</li>
-          <br>
-
-
+        <div class="prose-block">
           <p>I'm into <strong>blockchain tech</strong> and <strong>AI stuff</strong>. When I'm not coding, I'm probably
             checking out crypto markets or thinking about what to build next.</p>
-          <p> trying hard, trying to be the best version of myself</p>
-
-          <li>recent events on personal notes</li>
+          <p>trying hard, trying to be the best version of myself</p>
           <p>been doing well and the end of the year is getting better with some light notes with some good and bad
             achievements in life</p>
-
-          <p>one quote that keeps me going on : if your ideas or work doesnt excite you to stay awake whole night , you
-            dont want it badly enough</p>
+          <blockquote class="quote">if your ideas or work doesnt excite you to stay awake whole night, you dont want it
+            badly enough</blockquote>
           <p><strong>Imphal / Chennai</strong></p>
+        </div>
       </div>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <div class="social-links">
-          <p><a href="mailto:chimmykk@gmail.com">email (chimmykk@gmail.com)</a></p>
-
-          <p><a href="https://github.com/chimmykk" target="_blank">github (chimmykk)</a></p>
-        </div>
-        <div class="nav-links">
-          <p><a href="index.html">about</a></p>
-          <p><a href="projects.html">projects</a></p>
-          <p><a href="personalviews.html">personal views</a></p>
-        </div>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <ul class="site-footer__links">
+          <li><a href="mailto:chimmykk@gmail.com">chimmykk@gmail.com</a></li>
+          <li><a href="https://github.com/chimmykk" target="_blank" rel="noopener">github</a></li>
+        </ul>
+        <p class="site-footer__meta">Imphal / Chennai</p>
       </div>
     </footer>
   </div>
-
 </body>
 
 </html>

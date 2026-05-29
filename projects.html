@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Yeite Rilsosing Koireng</title>
+  <title>Projects — Yeite Rilsosing Koireng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
 </head>
-<body>
-  <div class="container">
-    <div class="back-button">
-      <a href="javascript:history.back()">← back</a>
-    </div>
-    <header>
-      <h1>projects</h1>
-      <p class="tagline">building stuff, sleeps 99% late then most of the world</p>
-    </header>
 
-    <main>
+<body class="page-projects">
+  <div class="page">
+    <nav class="site-nav" aria-label="Main">
+      <a class="site-nav__brand" href="index.html">yrk</a>
+      <div class="site-nav__end">
+        <ul class="site-nav__links">
+          <li><a href="index.html">about</a></li>
+          <li><a href="projects.html" class="is-active">projects</a></li>
+          <li><a href="personalviews.html">views</a></li>
+        </ul>
+        <button type="button" class="theme-toggle" aria-label="Toggle color theme">☾</button>
+      </div>
+    </nav>
+
+    <main class="container container--wide">
+      <header class="hero">
+        <h1 class="page-title">projects</h1>
+        <p class="page-subtitle">things i've built or shipped</p>
+      </header>
+
       <div class="content">
         <div class="project-list">
           <div class="project-item project-item--current">
@@ -30,72 +45,69 @@
           </div>
 
           <div class="project-item">
-            <h3><a href="https://github.com/chimmykk/light-games" target="_blank">Light Games</a></h3>
+            <h3><a href="https://github.com/chimmykk/light-games" target="_blank" rel="noopener">Light Games</a></h3>
             <p>Built a game generator with Next.js and MongoDB. You can create, play, and share AI-generated games. Has both single-player and multiplayer modes.</p>
             <div class="project-links">
-              <a href="https://github.com/chimmykk/light-games" target="_blank">GitHub</a>
-              <a href="https://vimeo.com/manage/videos/1089685431" target="_blank">Demo Video</a>
+              <a href="https://github.com/chimmykk/light-games" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://vimeo.com/manage/videos/1089685431" target="_blank" rel="noopener">Demo Video</a>
             </div>
           </div>
 
           <div class="project-item">
-            <h3><a href="https://hello-fhevm-rilso.vercel.app/" target="_blank">hello-fhevm</a></h3>
+            <h3><a href="https://hello-fhevm-rilso.vercel.app/" target="_blank" rel="noopener">hello-fhevm</a></h3>
             <p>Educational platform for FHEVM tech. Helps developers learn and integrate fully homomorphic encryption into their apps.</p>
             <div class="project-links">
-              <a href="https://hello-fhevm-rilso.vercel.app/" target="_blank">Live Demo</a>
+              <a href="https://hello-fhevm-rilso.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
             </div>
           </div>
 
           <div class="project-item">
-            <h3><a href="https://github.com/chimmykk/Shapes-SDK" target="_blank">Shapes SDK</a></h3>
+            <h3><a href="https://github.com/chimmykk/Shapes-SDK" target="_blank" rel="noopener">Shapes SDK</a></h3>
             <p>TypeScript SDK for Shapes AI API. Handles text chat, audio, and image analysis. Published as <code>shapes-sdk-ts</code> on npm.</p>
             <div class="project-links">
-              <a href="https://github.com/chimmykk/Shapes-SDK" target="_blank">GitHub</a>
-              <a href="https://www.npmjs.com/package/shapes-sdk-ts" target="_blank">NPM</a>
+              <a href="https://github.com/chimmykk/Shapes-SDK" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.npmjs.com/package/shapes-sdk-ts" target="_blank" rel="noopener">NPM</a>
             </div>
           </div>
 
           <div class="project-item">
-            <h3><a href="https://github.com/gm3-dev/mintpad" target="_blank">Mintpad</a></h3>
+            <h3><a href="https://github.com/gm3-dev/mintpad" target="_blank" rel="noopener">Mintpad</a></h3>
             <p>NFT minting platform built with Vue.js and PHP. Create and manage NFT collections.</p>
             <div class="project-links">
-              <a href="https://github.com/gm3-dev/mintpad" target="_blank">GitHub</a>
+              <a href="https://github.com/gm3-dev/mintpad" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
 
           <div class="project-item">
-            <h3><a href="https://github.com/chimmykk/NAMADA-DONOR-DROP" target="_blank">Namada Donor Drop</a></h3>
+            <h3><a href="https://github.com/chimmykk/NAMADA-DONOR-DROP" target="_blank" rel="noopener">Namada Donor Drop</a></h3>
             <p>Built a dApp for Namada blockchain funding. Helped distribute over 100 ETH to PGF projects.</p>
             <div class="project-links">
-              <a href="https://github.com/chimmykk/NAMADA-DONOR-DROP" target="_blank">GitHub</a>
+              <a href="https://github.com/chimmykk/NAMADA-DONOR-DROP" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
 
           <div class="project-item">
-            <h3><a href="https://github.com/chimmykk/Namada-SDK" target="_blank">Namada SDK</a></h3>
+            <h3><a href="https://github.com/chimmykk/Namada-SDK" target="_blank" rel="noopener">Namada SDK</a></h3>
             <p>Rust SDK wallet for Namada blockchain. Tools for developers to build privacy-focused apps on Namada.</p>
             <div class="project-links">
-              <a href="https://github.com/chimmykk/Namada-SDK" target="_blank">GitHub</a>
+              <a href="https://github.com/chimmykk/Namada-SDK" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <div class="social-links">
-          <p><a href="mailto:chimmykk@gmail.com">email (chimmykk@gmail.com)</a></p>
-          <p><a href="tel:+917085387411">phone (+91 7085387411)</a></p>
-          <p><a href="https://github.com/chimmykk" target="_blank">github (chimmykk)</a></p>
-        </div>
-        <div class="nav-links">
-          <p><a href="index.html">about</a></p>
-          <p><a href="projects.html">projects</a></p>
-          <p><a href="personalviews.html">personal views</a></p>
-        </div>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <ul class="site-footer__links">
+          <li><a href="mailto:chimmykk@gmail.com">email</a></li>
+          <li><a href="tel:+917085387411">phone</a></li>
+          <li><a href="https://github.com/chimmykk" target="_blank" rel="noopener">github</a></li>
+        </ul>
+        <p class="site-footer__meta">© 2026</p>
       </div>
     </footer>
   </div>
 </body>
+
 </html>
